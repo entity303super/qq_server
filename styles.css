@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('background.webp'); /* Убедитесь, что путь к картинке корректен */
+    background-color: rgba(0, 0, 0, 0.85); /* Тёмный фон */
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Центрируем горизонтально */
+    align-items: center; /* Центрируем вертикально */
+    overflow-y: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Убираем фон и тень */
+    background-color: transparent; /* Убираем белый фон */
+    box-shadow: none; /* Убираем тень */
+    padding: 20px; /* Оставляем только отступы */
+    max-width: 1200px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.content {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем содержимое */
+    align-items: center; /* Центрируем содержимое */
+}
+
+.content .welcome {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff; /* Белый цвет текста */
+    text-shadow: 1px 1px 2px #000; /* Тень для читаемости */
+    display: block; /* Показываем заголовок на всех устройствах */
+}
+
+.content p, .content ul li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+}
+
+.image {
+    max-width: 400px;
+    padding: 20px;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптация для ПК версии */
+@media (min-width: 600px) {
+    .container {
+        flex-direction: row; /* На ПК - горизонтально */
+    }
+
+    .content {
+        max-width: 60%; /* Текст занимает 60% ширины */
+    }
+
+    .image {
+        max-width: 40%; /* Картинка занимает 40% ширины */
+        padding: 0;
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+    .container {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    .content .welcome {
+        font-size: 1.8rem; /* Уменьшенный размер заголовка на мобильных */
+        display: block; /* Убедимся, что заголовок показывается */
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .content p, .content ul li {
+        font-size: 1rem;
+    }
+
+    .content ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .image {
+        max-width: 100%;
+        padding: 0;
+    }
+}
